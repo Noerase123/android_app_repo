@@ -49,7 +49,7 @@
         </RelativeLayout>
 
         <GridLayout
-            android:columnCount="2"
+            android:columnCount="3"
             android:rowCount="5"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
@@ -57,8 +57,8 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -68,18 +68,17 @@
                 <LinearLayout
                     android:id="@+id/calcbtn"
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/calc"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Calculator"
@@ -91,8 +90,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -101,18 +100,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/facebook"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -124,8 +122,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -134,18 +132,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/instagram"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -157,8 +154,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -167,18 +164,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/twitter"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -190,8 +186,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -200,18 +196,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/settings"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -223,8 +218,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -233,18 +228,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/share"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -256,8 +250,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -266,18 +260,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/phone"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"
@@ -289,8 +282,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -299,18 +292,17 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:padding="16dp"
+                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
                         android:src="@drawable/account"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
-                        android:layout_marginTop="12dp"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp"
                         android:text="Account"

@@ -119,7 +119,8 @@ public class CalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 compute();
                 ACTION = ADDITION;
-                result.setText(String.valueOf(val1) + "+");
+                result.setText(String.valueOf(val1) + " + ");
+                info.setText(null);
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +128,8 @@ public class CalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 compute();
                 ACTION = SUBTRACTION;
-                result.setText(String.valueOf(val1) + "-");
+                result.setText(String.valueOf(val1) + " - ");
+                info.setText(null);
             }
         });
         mul.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +137,8 @@ public class CalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 compute();
                 ACTION = MULTIPLICATION;
-                result.setText(String.valueOf(val1) + "*");
+                result.setText(String.valueOf(val1) + " x ");
+                info.setText(null);
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
@@ -143,7 +146,8 @@ public class CalculatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 compute();
                 ACTION = DIVISION;
-                result.setText(String.valueOf(val1) + "/");
+                result.setText(String.valueOf(val1) + " / ");
+                info.setText(null);
             }
         });
 
@@ -163,6 +167,7 @@ public class CalculatorActivity extends AppCompatActivity {
                 if (info.getText().length() > 0) {
                     CharSequence name = info.getText().toString();
                     info.setText(name.subSequence(0, name.length() - 1));
+                    result.setText(null);
                 }
                 else {
                     val1 = Double.NaN;

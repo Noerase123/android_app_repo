@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgapps"
+    android:background="@drawable/bgvio"
     tools:context=".Main2Activity">
 
     <LinearLayout
@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/dashpanel"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:layout_marginRight="20dp"
@@ -22,16 +23,17 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="My Dashboard"
+                android:text="MyTown Dashboard"
                 android:textColor="#fff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
+                android:id="@+id/nametxt"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/txtDashboard"
-                android:text="12 Items"
+                android:text="John Isaac B. Caasi"
                 android:textColor="#52BAFF"
                 android:textSize="14sp"
                 android:layout_width="wrap_content"
@@ -48,7 +50,65 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_below="@+id/dashpanel"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/baltxt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Balance : "/>
+
+            <TextView
+                android:id="@+id/balres"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="PHP 5388.35"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/baltxt"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_alignParentLeft="true"
+                android:textSize="22dp"
+                android:textAllCaps="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="unit :"/>
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/balres"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textColor="@color/green"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="AMS203A"/>
+
+        </RelativeLayout>
+
         <GridLayout
+            android:id="@+id/gridmenu"
             android:columnCount="3"
             android:rowCount="5"
             android:alignmentMode="alignMargins"
@@ -58,7 +118,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -66,7 +126,6 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
-                    android:id="@+id/calcbtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -74,14 +133,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/calc"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Calculator"
+                        android:textSize="14sp"
+                        android:text="Payment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -91,7 +150,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -106,14 +165,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/facebook"
+                        android:src="@drawable/ic_dvr_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="Bill List"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -123,7 +182,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -138,14 +197,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/instagram"
+                        android:src="@drawable/ic_notifications_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="Issue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -155,7 +214,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -163,6 +222,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/profilebtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -170,14 +230,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/twitter"
+                        android:src="@drawable/ic_assignment_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="Profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -187,7 +247,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -202,14 +262,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/settings"
+                        android:src="@drawable/ic_assistant_photo_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="My Lease Plan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -219,7 +279,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -234,14 +294,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/share"
+                        android:src="@drawable/ic_content_paste_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="Rules"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -251,7 +311,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -266,14 +326,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/phone"
+                        android:src="@drawable/ic_townclub"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="MyTown Club"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -283,7 +343,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 app:cardElevation="6dp"
@@ -298,14 +358,14 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/account"
+                        android:src="@drawable/ic_av_timer_black_24dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp"
-                        android:text="Account"
+                        android:textSize="14sp"
+                        android:text="Book Cleaning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -314,6 +374,115 @@
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
+
+        <GridLayout
+            android:columnCount="1"
+            android:rowCount="5"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#6f6f6f"
+                        android:textSize="14sp"
+                        android:text="Payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#6f6f6f"
+                        android:textSize="14sp"
+                        android:text="Payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textColor="#6f6f6f"
+                        android:textSize="14sp"
+                        android:text="Payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </GridLayout>
+
 
     </LinearLayout>
 

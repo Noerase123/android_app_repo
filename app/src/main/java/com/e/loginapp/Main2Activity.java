@@ -14,14 +14,5 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        LinearLayout calcbtn = (LinearLayout) findViewById(R.id.calcbtn);
-
-        calcbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Main2Activity.this, CalculatorActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }

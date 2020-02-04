@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,11 +24,19 @@ public class paymentActivity extends Activity {
         dropdown.setAdapter(adapter);
 
         ImageView captureBtn = (ImageView) findViewById(R.id.captureBtn);
+        Button submitbtn = (Button) findViewById(R.id.submitbtn);
 
         captureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(paymentActivity.this, "Open Camera", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        submitbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(paymentActivity.this, "Payment Submitted", Toast.LENGTH_LONG).show();
             }
         });
 

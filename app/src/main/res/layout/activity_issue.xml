@@ -7,6 +7,7 @@
     tools:context=".IssueActivity">
 
     <TextView
+        android:id="@+id/txtissue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Report an Issue"
@@ -16,6 +17,103 @@
         android:textColor="#000"
         android:textAlignment="center"/>
 
+    <ImageView
+        android:id="@+id/camerabtn"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtissue"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_camera"/>
+
+    <LinearLayout
+        android:id="@+id/linewrite_et"
+        android:layout_below="@id/camerabtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_bill">
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:inputType="text|textMultiLine"
+            android:hint="write about your issue ... "
+            android:gravity="top"/>
+
+    </LinearLayout>
+
+
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/linewrite_et"
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
+
+    <CheckBox
+        android:layout_below="@+id/spinner1"
+        android:id="@+id/simpleCheckBox"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anytime"/>
+
+    <TextView
+        android:id="@+id/timeslot"
+        android:layout_below="@+id/simpleCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Schedule"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:textAlignment="center"/>
+
+        <TextView
+            android:layout_below="@id/timeslot"
+            android:background="@drawable/border_bill"
+            android:id="@+id/from_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_weight=".5"
+            android:textSize="20dp"
+            android:hint="From Date" />
+
+        <TextView
+            android:layout_below="@+id/from_date"
+            android:background="@drawable/border_bill"
+            android:id="@+id/to_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:textAlignment="center"
+            android:layout_weight=".5"
+            android:textSize="20dp"
+            android:hint="To Date" />
+
+    <Button
+        android:id="@+id/submitbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:text="submit" />
 
 
 

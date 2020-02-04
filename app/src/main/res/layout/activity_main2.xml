@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgvio"
+    android:requiresFadingEdge="vertical"
+    android:fadingEdgeLength="50dp"
     tools:context=".Main2Activity">
 
     <LinearLayout
@@ -72,7 +74,7 @@
                 android:text="Balance : "/>
 
             <TextView
-                android:id="@+id/balres"
+                android:id="@+id/balanceResult"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -95,7 +97,7 @@
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/balres"
+                android:layout_below="@+id/balanceResult"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -126,6 +128,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/paymentbtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -158,6 +161,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/billbtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -190,6 +194,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/issuebtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -255,6 +260,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/leaseBtn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -375,7 +381,29 @@
 
         </GridLayout>
 
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MyTown Events and Upcoming Events"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"/>
+
         <GridLayout
+            android:layout_below="@+id/gridmenu"
             android:columnCount="1"
             android:rowCount="5"
             android:alignmentMode="alignMargins"
@@ -393,6 +421,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/event1btn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -400,14 +429,52 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:background="@drawable/background_fade"
+                        android:adjustViewBounds="true"
+                        android:textAlignment="center"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:textColor="#6f6f6f"
+                            android:textSize="14sp"
+                            android:text="Event 1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="150dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="12dp">
+
+                <LinearLayout
+                    android:id="@+id/event2btn"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:background="@drawable/background_fade2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:requiresFadingEdge="vertical"
+                        android:fadingEdgeLength="20dp"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
                         android:textSize="14sp"
-                        android:text="Payment"
+                        android:text="Event 2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -425,6 +492,7 @@
                 android:layout_margin="12dp">
 
                 <LinearLayout
+                    android:id="@+id/event3btn"
                     android:orientation="vertical"
                     android:padding="8dp"
                     android:gravity="center"
@@ -432,46 +500,16 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_add_circle_outline_black_24dp"
+                        android:background="@drawable/background_fade3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:requiresFadingEdge="vertical"
+                        android:fadingEdgeLength="10dp"/>
 
                     <TextView
                         android:textColor="#6f6f6f"
                         android:textSize="14sp"
-                        android:text="Payment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="80dp"
-                android:layout_height="150dp"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp">
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="8dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/ic_add_circle_outline_black_24dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:textColor="#6f6f6f"
-                        android:textSize="14sp"
-                        android:text="Payment"
+                        android:text="Event 3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 

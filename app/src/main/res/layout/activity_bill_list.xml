@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BillListActivity">
+
+    <TextView
+        android:id="@+id/billtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="bill list"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:background="@drawable/border_bill"
+        android:id="@+id/billingmet"
+        android:layout_below="@+id/billtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/person"/>
+
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textbill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:text="off001b00001"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textbill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:text="P 16,038.00"
+                android:textSize="18dp"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:id="@+id/textbill3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:text="Jan-16-2020"
+                android:textSize="18dp"/>
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_check_circle_black_24dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/billingmet2"
+        android:background="@drawable/border_bill"
+        android:layout_below="@+id/billingmet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/person"/>
+
+        <RelativeLayout
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textbill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:text="off202000591"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textbill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:text="P 4,400.00"
+                android:textSize="18dp"
+                android:textColor="@color/green"/>
+
+            <TextView
+                android:id="@+id/textbill3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:text="Jan-16-2020"
+                android:textSize="18dp"/>
+
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_access_time_black_24dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

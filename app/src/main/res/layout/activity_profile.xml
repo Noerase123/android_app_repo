@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/profiletxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tenant Profile"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed-medium" />
+
+    <ImageView
+        android:id="@+id/profileimg"
+        android:layout_below="@+id/profiletxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/account"
+        android:maxHeight="200dp"
+        android:maxWidth="150dp"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/fullname"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/profileimg"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Fullname :"/>
+
+    <TextView
+        android:fontFamily="sans-serif-condensed-medium"
+        android:id="@+id/fullnameres"
+        android:layout_below="@+id/profileimg"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="John Isaac B. Caasi"/>
+
+    <TextView
+        android:id="@+id/unitnotxt"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/fullname"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Unit No. :"/>
+
+    <TextView
+        android:id="@+id/unitres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/fullnameres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="AMS 203 A"/>
+
+    <TextView
+        android:id="@+id/bedratetxt"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/unitnotxt"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Bed Rate :"/>
+
+    <TextView
+        android:id="@+id/bedrateres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/unitres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="PHP 4,400.00"/>
+
+    <TextView
+        android:id="@+id/startdate"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/bedratetxt"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Start Date :"/>
+
+    <TextView
+        android:id="@+id/startdatetxtres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/bedrateres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="Jan 4, 2020"/>
+
+    <TextView
+        android:id="@+id/enddate"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/startdate"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="End Date :"/>
+
+    <TextView
+        android:id="@+id/enddatetxtres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/startdatetxtres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="Jan 4, 2021"/>
+
+    <TextView
+        android:id="@+id/totalamount"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/enddate"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Total Amount Due :"/>
+
+    <TextView
+        android:id="@+id/totalamountres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/enddatetxtres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="PHP 16,038.00"/>
+
+
+    <TextView
+        android:id="@+id/overduetxt"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/totalamount"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="OverDue Date :"/>
+
+    <TextView
+        android:id="@+id/overdueres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/totalamountres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="Jan 4, 2020"/>
+
+
+</RelativeLayout>

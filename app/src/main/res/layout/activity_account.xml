@@ -1,9 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AccountActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/profileimg"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mytown"
+        android:maxHeight="50dp"
+        android:maxWidth="150dp"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:layout_below="@+id/profileimg"
+        android:id="@+id/profiletxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Account Settings"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed-medium" />
+
+    <TextView
+        android:id="@+id/fullname"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/profiletxt"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Notification"/>
+
+    <Switch
+        android:fontFamily="sans-serif-condensed-medium"
+        android:id="@+id/fullnameres"
+        android:layout_below="@+id/profiletxt"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/unitnotxt"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/fullname"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Unit No. :"/>
+
+    <TextView
+        android:id="@+id/unitres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/fullnameres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="AMS 203 A"/>
+
+    <TextView
+        android:id="@+id/bedratetxt"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/unitnotxt"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Contact No. :"/>
+
+    <TextView
+        android:id="@+id/bedrateres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/unitres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="+639 77 046 6342"/>
+
+    <TextView
+        android:id="@+id/startdate"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/bedratetxt"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Landline : "/>
+
+    <TextView
+        android:id="@+id/startdatetxtres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/bedrateres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="02 123 6789"/>
+
+    <TextView
+        android:id="@+id/enddate"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/startdate"
+        android:layout_marginTop="20dp"
+        android:layout_width="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp"
+        android:text="Location :"/>
+
+    <TextView
+        android:id="@+id/enddatetxtres"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/startdatetxtres"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+        android:text="Makati"/>
+
+
+    <Button
+        android:id="@+id/logoutbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="#ff0000"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:text="Logout" />
+
+
+</RelativeLayout>

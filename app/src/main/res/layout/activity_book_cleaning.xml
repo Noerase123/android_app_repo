@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BookCleaningActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtissue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Cleaning"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:id="@+id/unitno"
+        android:layout_below="@+id/txtissue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border_bill"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:text="AMS203A"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_below="@+id/unitno"
+        android:id="@+id/uploadPictxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a Date"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="15sp"
+        android:textColor="#000"/>
+
+    <Spinner
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/select_date"
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
+
+    <TextView
+        android:id="@+id/select_date"
+        android:layout_below="@id/uploadPictxt"
+        android:background="@drawable/border_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:layout_weight=".5"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:hint="Date of cleaning" />
+
+
+
+    <Button
+        android:id="@+id/bookcleaningbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:text="Book Cleaning" />
+
+</RelativeLayout>

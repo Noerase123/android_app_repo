@@ -17,12 +17,23 @@
         android:textColor="#000"
         android:textAlignment="center"/>
 
+    <TextView
+        android:layout_below="@+id/txtissue"
+        android:id="@+id/uploadPictxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upload your pic"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="15sp"
+        android:textColor="#000"/>
+
     <ImageView
         android:id="@+id/camerabtn"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtissue"
+        android:layout_below="@+id/uploadPictxt"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:src="@drawable/ic_camera"/>
 
     <LinearLayout
@@ -77,9 +88,9 @@
         android:textAlignment="center"/>
 
         <TextView
+            android:id="@+id/from_date"
             android:layout_below="@id/timeslot"
             android:background="@drawable/border_bill"
-            android:id="@+id/from_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
@@ -87,13 +98,13 @@
             android:layout_marginTop="10dp"
             android:textAlignment="center"
             android:layout_weight=".5"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:hint="From Date" />
 
         <TextView
+            android:id="@+id/to_date"
             android:layout_below="@+id/from_date"
             android:background="@drawable/border_bill"
-            android:id="@+id/to_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -101,7 +112,7 @@
             android:layout_marginRight="80dp"
             android:textAlignment="center"
             android:layout_weight=".5"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:hint="To Date" />
 
     <Button
@@ -113,7 +124,7 @@
         android:background="@color/colorPrimary"
         android:textColor="@color/colorAccent"
         android:layout_alignParentBottom="true"
-        android:text="submit" />
+        android:text="Report" />
 
 
 

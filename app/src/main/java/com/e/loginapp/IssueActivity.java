@@ -99,7 +99,7 @@ public class IssueActivity extends AppCompatActivity {
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(IssueActivity.this, "Payment Submitted", Toast.LENGTH_LONG).show();
+                Toast.makeText(IssueActivity.this, "Issue Submitted", Toast.LENGTH_LONG).show();
             }
         });
 

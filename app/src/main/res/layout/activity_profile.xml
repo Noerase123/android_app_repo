@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Fullname :"/>
+        android:text="Email :"/>
 
     <TextView
         android:fontFamily="sans-serif-condensed-medium"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="John Isaac B. Caasi"/>
+        android:text="isaac.caasi@puls.ph"/>
 
     <TextView
         android:id="@+id/unitnotxt"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Bed Rate :"/>
+        android:text="Contact No. :"/>
 
     <TextView
         android:id="@+id/bedrateres"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="PHP 4,400.00"/>
+        android:text="+639 77 046 6342"/>
 
     <TextView
         android:id="@+id/startdate"
@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Start Date :"/>
+        android:text="Landline : "/>
 
     <TextView
         android:id="@+id/startdatetxtres"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Jan 4, 2020"/>
+        android:text="02 123 6789"/>
 
     <TextView
         android:id="@+id/enddate"
@@ -133,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="End Date :"/>
+        android:text="Location :"/>
 
     <TextView
         android:id="@+id/enddatetxtres"
@@ -145,56 +145,84 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Jan 4, 2021"/>
+        android:text="Makati"/>
+
+    <View
+        android:layout_below="@id/enddatetxtres"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="2dp"
+        android:background="#c3c3c3"/>
 
     <TextView
-        android:id="@+id/totalamount"
+        android:id="@+id/emergencytxttitle"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/enddate"
+        android:layout_below="@+id/profileimg"
+        android:layout_marginTop="260dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:text="In Case of Emergency"
+        android:textStyle="italic"/>
+
+    <View
+        android:layout_below="@id/emergencytxttitle"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="2dp"
+        android:background="#c3c3c3"/>
+
+    <TextView
+        android:id="@+id/emName"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_below="@+id/emergencytxttitle"
         android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Total Amount Due :"/>
+        android:textAllCaps="true"
+        android:text="name :"/>
 
     <TextView
-        android:id="@+id/totalamountres"
+        android:id="@+id/emNameRes"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/enddatetxtres"
+        android:layout_below="@+id/emergencytxttitle"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="PHP 16,038.00"/>
-
+        android:text="Aida Caasi"/>
 
     <TextView
-        android:id="@+id/overduetxt"
+        android:id="@+id/emNumber"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/totalamount"
+        android:layout_below="@+id/emName"
         android:layout_marginTop="20dp"
         android:layout_width="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="OverDue Date :"/>
+        android:textAllCaps="true"
+        android:text="Contact No. :"/>
 
     <TextView
-        android:id="@+id/overdueres"
+        android:id="@+id/emNumberRes"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/totalamountres"
+        android:layout_below="@+id/emNameRes"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Jan 4, 2020"/>
+        android:text="0977-1234567"/>
+
 
 
 </RelativeLayout>

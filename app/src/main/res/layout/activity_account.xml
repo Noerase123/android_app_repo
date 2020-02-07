@@ -11,6 +11,7 @@
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:src="@drawable/mytown"
         android:maxHeight="50dp"
         android:maxWidth="150dp"
@@ -46,8 +47,10 @@
         android:layout_below="@+id/profiletxt"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
+        android:theme="@style/Switch"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:switchMinWidth="50dp"
         android:layout_alignParentRight="true"
         android:textSize="20dp"/>
 
@@ -55,37 +58,37 @@
         android:id="@+id/unitnotxt"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_below="@+id/fullname"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_width="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Unit No. :"/>
+        android:text="Location :"/>
 
     <TextView
         android:id="@+id/unitres"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_below="@+id/fullnameres"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginHorizontal="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="AMS 203 A"/>
+        android:text="359 Panay St, Makati, Metro Manila"/>
 
     <TextView
         android:id="@+id/bedratetxt"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_below="@+id/unitnotxt"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="44dp"
         android:layout_width="200dp"
         android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Contact No. :"/>
+        android:text="Contact Us :"/>
 
     <TextView
         android:id="@+id/bedrateres"
@@ -121,31 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="02 123 6789"/>
-
-    <TextView
-        android:id="@+id/enddate"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/startdate"
-        android:layout_marginTop="20dp"
-        android:layout_width="200dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:textSize="20dp"
-        android:text="Location :"/>
-
-    <TextView
-        android:id="@+id/enddatetxtres"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/startdatetxtres"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:textSize="20dp"
-        android:text="Makati"/>
+        android:text="(02) 123 6789"/>
 
 
     <Button

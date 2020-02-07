@@ -3,9 +3,12 @@ package com.e.loginapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,16 +19,23 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.Calendar;
 
 public class IssueActivity extends AppCompatActivity {
 
     private static final String TAG = "IssueActivity";
 
+    private ImageView cameraBtn;
+    private ImageView cameraView;
+
     private TextView FromDate;
-    private  TextView ToDate;
+    private TextView ToDate;
+    private TextView FromToDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private DatePickerDialog.OnDateSetListener mDateSetListener2;
+    private DatePickerDialog.OnDateSetListener mDateSetListener3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +44,20 @@ public class IssueActivity extends AppCompatActivity {
 
         FromDate = (TextView) findViewById(R.id.from_date);
         ToDate = (TextView) findViewById(R.id.to_date);
+        FromToDate = (TextView) findViewById(R.id.fromto_date);
+
         Button submitbtn = (Button) findViewById(R.id.submitbtn);
+
+        cameraBtn = (ImageView) findViewById(R.id.cameraBtn);
+        cameraView = (ImageView) findViewById(R.id.cameraView);
+
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(i,0);
+            }
+        });
 
         FromDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +69,7 @@ public class IssueActivity extends AppCompatActivity {
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         IssueActivity.this,
-                        android.R.style.Theme_Holo_Dialog_MinWidth,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -64,8 +87,26 @@ public class IssueActivity extends AppCompatActivity {
 
                 DatePickerDialog dialog = new DatePickerDialog(
                         IssueActivity.this,
-                        android.R.style.Theme_Holo_Dialog_MinWidth,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener2,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        FromToDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        IssueActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener3,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -96,6 +137,18 @@ public class IssueActivity extends AppCompatActivity {
             }
         };
 
+        mDateSetListener3 = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+
+                Log.d(TAG, "onDateSet: mm/dd/yyyy: " + year + "/" + month + "/" + dayOfMonth);
+
+                String date = month + "/" + dayOfMonth + "/" + year;
+                FromToDate.setText(date);
+            }
+        };
+
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,14 +160,12 @@ public class IssueActivity extends AppCompatActivity {
         String[] items = new String[]{"Select Category", "Billing", "Personnel", "Repair", "Internet", "Housekeeping", "App Concerns"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+    }
 
-        ImageView captureBtn = (ImageView) findViewById(R.id.camerabtn);
 
-        captureBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(IssueActivity.this, "Open Camera", Toast.LENGTH_LONG).show();
-            }
-        });
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+        cameraView.setImageBitmap(bitmap);
     }
 }

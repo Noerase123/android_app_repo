@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:text="Capture Payment Slip"/>
 
+
     <ImageView
         android:id="@+id/captureBtn"
         android:layout_below="@+id/paymentSlip"
@@ -74,6 +75,16 @@
         android:minWidth="150dp"
         android:layout_centerInParent="true"
         android:src="@drawable/ic_camera"/>
+
+
+    <ImageView
+        android:id="@+id/captureView"
+        android:layout_below="@+id/paymentSlip"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:minHeight="150dp"
+        android:minWidth="150dp"
+        android:layout_centerInParent="true"/>
 
 
     <ImageView

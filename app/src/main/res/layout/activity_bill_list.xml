@@ -19,8 +19,8 @@
         android:textAlignment="center"/>
 
     <LinearLayout
-        android:background="@drawable/border_bill"
         android:id="@+id/billingmet"
+        android:background="@drawable/border_bill"
         android:layout_below="@+id/billtxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textbill"
+                android:id="@+id/textbill4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="true"
@@ -112,7 +112,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/textbill2"
+                android:id="@+id/textbill5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="true"
@@ -123,7 +123,7 @@
                 android:textColor="@color/green"/>
 
             <TextView
-                android:id="@+id/textbill3"
+                android:id="@+id/textbill6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120dp"

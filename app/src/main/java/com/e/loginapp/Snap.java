@@ -1,4 +1,4 @@
-package com.github.rubensousa.recyclerviewsnap;
+package com.e.loginapp;
 
 
 import java.util.List;

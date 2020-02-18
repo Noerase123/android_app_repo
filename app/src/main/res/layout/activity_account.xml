@@ -112,10 +112,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:textSize="20dp"
-        android:text="Landline : "/>
+        android:text="Visit our website : "/>
 
     <TextView
-        android:id="@+id/startdatetxtres"
+        android:id="@+id/websitebtn"
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_below="@+id/bedrateres"
         android:layout_marginTop="20dp"
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="(02) 123 6789"/>
+        android:text="mytown.ph"/>
 
 
     <Button

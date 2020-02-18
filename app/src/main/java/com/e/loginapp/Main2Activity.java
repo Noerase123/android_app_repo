@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
@@ -23,9 +24,14 @@ import com.synnapps.carouselview.ImageListener;
 
 import java.util.ArrayList;
 
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class Main2Activity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    private JsonHolderApi jsonHolderApi;
 
     CarouselView carouselView;
     int[] sampleImages = {R.drawable.img1, R.drawable.img2, R.drawable.img3};
@@ -34,6 +40,15 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonHolderApi = retrofit.create(JsonHolderApi.class);
+
+        
 
         carouselView = findViewById(R.id.carouselView);
         carouselView.setPageCount(sampleImages.length);
@@ -49,6 +64,8 @@ public class Main2Activity extends AppCompatActivity {
         LinearLayout cleaningbtn = (LinearLayout) findViewById(R.id.cleaningbtn);
         CardView accountbtn = (CardView) findViewById(R.id.accountbtn);
         LinearLayout eventsbtn = (LinearLayout) findViewById(R.id.eventsbtn);
+
+        TextView nametxt = (TextView) findViewById(R.id.nametxt);
 
         accountbtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -42,8 +42,8 @@
 
             <TextView
                 android:id="@+id/txtDashboard"
-                android:text="John Isaac B. Caasi"
-                android:textColor="#52BAFF"
+                android:text="MyTown Dashboard"
+                android:textColor="#fff"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -155,13 +155,12 @@
                 <LinearLayout
                     android:id="@+id/paymentbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_monetization_on_black_24dp"
+                        android:src="@drawable/payments"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -188,13 +187,12 @@
                 <LinearLayout
                     android:id="@+id/billbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_dvr_black_24dp"
+                        android:src="@drawable/billlist"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -221,13 +219,12 @@
                 <LinearLayout
                     android:id="@+id/issuebtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_notifications_black_24dp"
+                        android:src="@drawable/issue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -254,13 +251,12 @@
                 <LinearLayout
                     android:id="@+id/profilebtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_assignment_black_24dp"
+                        android:src="@drawable/profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -287,13 +283,12 @@
                 <LinearLayout
                     android:id="@+id/leaseBtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_assistant_photo_black_24dp"
+                        android:src="@drawable/leastplan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -320,13 +315,12 @@
                 <LinearLayout
                     android:id="@+id/rulesbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_content_paste_black_24dp"
+                        android:src="@drawable/rules"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -353,13 +347,12 @@
                 <LinearLayout
                     android:id="@+id/clubbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_townclub"
+                        android:src="@drawable/club"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -386,13 +379,12 @@
                 <LinearLayout
                     android:id="@+id/cleaningbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_room_black_24dp"
+                        android:src="@drawable/bookcleaning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -420,13 +412,12 @@
                 <LinearLayout
                     android:id="@+id/eventsbtn"
                     android:orientation="vertical"
-                    android:padding="8dp"
                     android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:src="@drawable/ic_event"
+                        android:src="@drawable/events"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -484,12 +475,14 @@
                     android:layout_marginBottom="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_marginRight="10dp">
 
                     <ImageView
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="250dp"
-                        android:src="@drawable/cardview1"/>
+                        android:src="@drawable/event1"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -497,51 +490,59 @@
                     android:id="@+id/event2"
                     android:layout_marginBottom="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp">
 
                     <ImageView
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="250dp"
-                        android:src="@drawable/cardview2"/>
+                        android:src="@drawable/event2"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/event3"
                     android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="250dp"
-                        android:src="@drawable/cardview3"/>
+                        android:src="@drawable/event3"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/event4"
                     android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="250dp"
-                        android:src="@drawable/cardview4"/>
+                        android:src="@drawable/event4"/>
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/event5"
                     android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="250dp"
-                        android:src="@drawable/cardview5"/>
+                        android:src="@drawable/event5"/>
 
                 </androidx.cardview.widget.CardView>
 

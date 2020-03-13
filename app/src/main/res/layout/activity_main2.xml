@@ -52,7 +52,7 @@
                 android:id="@+id/nametxt"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/txtDashboard"
-                android:text="John Isaac B. Caasi"
+                android:text="loading..."
                 android:textColor="#52BAFF"
                 android:textSize="14sp"
                 android:layout_width="wrap_content"
@@ -122,6 +122,7 @@
 
             <TextView
                 android:layout_marginTop="10dp"
+                android:id="@+id/unitnores"
                 android:layout_below="@+id/balanceResult"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -130,7 +131,7 @@
                 android:textColor="@color/green"
                 android:layout_alignParentRight="true"
                 android:fontFamily="sans-serif-condensed-medium"
-                android:text="AMS203A"/>
+                android:text="loading..."/>
 
         </RelativeLayout>
 
@@ -448,6 +449,8 @@
             android:fontFamily="sans-serif-condensed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/green"
+            android:textStyle="bold"
             android:text="MyTown Events and Upcoming Events"/>
 
         <View
@@ -457,8 +460,8 @@
             android:background="#ffffff"/>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -543,6 +546,125 @@
                         android:layout_width="190dp"
                         android:layout_height="250dp"
                         android:src="@drawable/event5"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="MyTown Febuary Movies"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ffffff"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie1"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/movie1"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie2"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp">
+
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/movie2"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie3"
+                    android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/movie3"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie4"
+                    android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/movie4"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie5"
+                    android:layout_marginBottom="20dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="190dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/movie5"/>
 
                 </androidx.cardview.widget.CardView>
 

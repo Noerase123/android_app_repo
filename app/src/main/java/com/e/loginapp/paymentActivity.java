@@ -10,17 +10,20 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class paymentActivity extends Activity {
 
     private ImageView captureView;
+    private TextView paymentSlip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        paymentSlip = (TextView) findViewById(R.id.paymentSlip);
 
         Spinner dropdown = findViewById(R.id.spinner1);
         String[] items = new String[]{"Select Invoice to pay","OFF202000591 - (P 5388.35)","OFF202000569 - (P 5388.35)"};

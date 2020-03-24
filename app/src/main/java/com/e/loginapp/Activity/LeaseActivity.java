@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.ApiServer.ApiLoader;
 import com.e.loginapp.Model.Tenant;
+import com.e.loginapp.R;
 
 import retrofit2.Call;
 import retrofit2.Callback;

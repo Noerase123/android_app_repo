@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,10 +9,11 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.e.loginapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

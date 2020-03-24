@@ -1,8 +1,9 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,24 +24,38 @@ import android.widget.Toast;
 
 import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.Model.Issue;
+import com.e.loginapp.R;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class IssueActivity extends AppCompatActivity {
 
     private static final String TAG = "IssueActivity";
-    private String BASE_URL = "https://mytown-app.com/api/";
     private JsonHolderApi jsonHolderApi;
+
+    private ProgressDialog progressDialog;
 
     private EditText issueDetails;
     private Spinner dropdown;
 
     private ImageView cameraBtn;
     private ImageView cameraView;
+
+    private CheckBox simpleCheckBox;
 
     private TextView FromDate;
     private TextView ToDate;
@@ -54,9 +70,15 @@ public class IssueActivity extends AppCompatActivity {
         setContentView(R.layout.activity_issue);
 
         issueDetails = (EditText) findViewById(R.id.edit_text);
+
+        simpleCheckBox = (CheckBox) findViewById(R.id.simpleCheckBox);
+
         FromDate = (TextView) findViewById(R.id.from_date);
         ToDate = (TextView) findViewById(R.id.to_date);
         FromToDate = (TextView) findViewById(R.id.fromto_date);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please wait...");
 
         Button submitbtn = (Button) findViewById(R.id.submitbtn);
 
@@ -169,8 +191,38 @@ public class IssueActivity extends AppCompatActivity {
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
 
-                addIssue();
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+
+
+                String details = issueDetails.getText().toString().trim();
+                String category = dropdown.getSelectedItem().toString();
+                String date1 = FromDate.getText().toString();
+                String date2 = ToDate.getText().toString();
+                String date3 = "03/15/2020";
+
+                Date dateOne = null;
+                Date dateTwo = null;
+                Date dateThree = null;
+
+                try {
+                    dateOne = dateFormat.parse(date1);
+                    dateTwo = dateFormat.parse(date2);
+                    dateThree = dateFormat.parse(date3);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                String check = "0";
+
+                if (simpleCheckBox.isChecked()) {
+                    check = "1";
+                } else {
+                    check = "0";
+                }
+
+                addIssue(details,category,check,dateOne,dateTwo,dateThree);
             }
         });
     }
@@ -182,21 +234,48 @@ public class IssueActivity extends AppCompatActivity {
         cameraView.setImageBitmap(bitmap);
     }
 
-    private void addIssue() {
+    private void addIssue(String issueDetails, String category, String anytime, Date date1, Date date2, Date date3) {
 
-        Call<Issue> call = jsonHolderApi.addIssues(issueDetails.getText().toString(), "App Concern", 0, FromDate.getText().toString(), ToDate.getText().toString(), FromToDate.getText().toString());
+        OkHttpClient client = new OkHttpClient();
 
-        call.enqueue(new Callback<Issue>() {
-            @Override
-            public void onResponse(Call<Issue> call, Response<Issue> response) {
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("issueDetails", issueDetails)
+                .addFormDataPart("category", category)
+                .addFormDataPart("anytime", anytime)
+                .addFormDataPart("date1", String.valueOf(date1))
+                .addFormDataPart("date2", String.valueOf(date2))
+                .addFormDataPart("date3", String.valueOf(date3))
+                .build();
 
-                Toast.makeText(IssueActivity.this, "Issue Submitted", Toast.LENGTH_LONG).show();
-            }
+        Request request = new Request.Builder()
+                .url("https://mytown-app.com/api/testingAddIssues")
+                .post(requestBody)
+                .build();
 
-            @Override
-            public void onFailure(Call<Issue> call, Throwable t) {
-                Toast.makeText(IssueActivity.this, "Issue Failed", Toast.LENGTH_LONG).show();
-            }
-        });
+            client.newCall(request).enqueue(new Callback() {
+                @Override
+                public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                    e.printStackTrace();
+                }
+
+                @Override
+                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    Log.d("Report An Issue",response.body().string());
+                    progressDialog.dismiss();
+                    finish();
+
+                }
+            });
+
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(IssueActivity.this,"Issue Reported successfully",Toast.LENGTH_LONG).show();
+                    }
+                },1000
+        );
+
     }
 }

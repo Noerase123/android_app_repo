@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.ApiServer.ApiLoader;
 import com.e.loginapp.Model.Invoice;
+import com.e.loginapp.R;
 
 import java.util.List;
 
@@ -18,7 +19,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BillListActivity extends AppCompatActivity {
 

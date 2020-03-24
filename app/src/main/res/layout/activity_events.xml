@@ -7,7 +7,7 @@
     android:background="@drawable/bgvio"
     android:requiresFadingEdge="vertical"
     android:fadingEdgeLength="50dp"
-    tools:context=".EventsActivity">
+    tools:context=".Activity.EventsActivity">
 
     <LinearLayout
         android:orientation="vertical"

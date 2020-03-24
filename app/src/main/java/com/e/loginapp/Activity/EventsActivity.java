@@ -1,8 +1,10 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.e.loginapp.R;
 
 public class EventsActivity extends AppCompatActivity {
 

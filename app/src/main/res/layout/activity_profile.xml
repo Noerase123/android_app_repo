@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".Activity.ProfileActivity">
 
     <TextView
         android:id="@+id/profiletxt"
@@ -41,7 +41,7 @@
 
     <TextView
         android:fontFamily="sans-serif-condensed-medium"
-        android:id="@+id/fullnameres"
+        android:id="@+id/emailres"
         android:layout_below="@+id/profileimg"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="isaac.caasi@puls.ph"/>
+        android:text="loading..."/>
 
     <TextView
         android:id="@+id/unitnotxt"
@@ -66,14 +66,14 @@
     <TextView
         android:id="@+id/unitres"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_below="@+id/fullnameres"
+        android:layout_below="@+id/emailres"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="AMS 203 A"/>
+        android:text="loading..."/>
 
     <TextView
         android:id="@+id/bedratetxt"
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="+639 77 046 6342"/>
+        android:text="loading..."/>
 
     <TextView
         android:id="@+id/startdate"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="02 123 6789"/>
+        android:text="loading..."/>
 
     <TextView
         android:id="@+id/enddate"
@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Makati"/>
+        android:text="loading..."/>
 
     <View
         android:layout_below="@id/enddatetxtres"
@@ -196,7 +196,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Aida Caasi"/>
+        android:text="loading..."/>
 
     <TextView
         android:id="@+id/emNumber"
@@ -221,7 +221,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="0977-1234567"/>
+        android:text="loading..."/>
 
 
 

@@ -1,7 +1,8 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -14,10 +15,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.Model.Tenant;
+import com.e.loginapp.R;
+import com.google.gson.Gson;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 import com.e.loginapp.ApiServer.ApiLoader;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+
+//import okhttp3.Call;
+//import okhttp3.Callback;
+//import okhttp3.OkHttpClient;
+//import okhttp3.Request;
+//import okhttp3.Response;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -146,11 +158,36 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void getOneTenant() {
+
+//        OkHttpClient client = new OkHttpClient();
+//
+//        Request request = new Request.Builder()
+//                .url("https://mytown-app.com/api/GetTenant/3304")
+//                .build();
+//
+//        Response response = null;
+//        try {
+//            response = client.newCall(request).execute();
+//
+//            if (response.isSuccessful()) {
+//                String mMessage = response.body().string();
+//                Gson gson = new Gson();
+//
+//                Tenant tenant = gson.fromJson(mMessage, Tenant.class);
+//                nametxt.setText(tenant.getFirstname() + ' ' + tenant.getMiddlename().substring(0,1) + ' ' + tenant.getLastname());
+//                unitnores.setText(tenant.getBldg_num().toUpperCase() + tenant.getRoom_id());
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+
         Retrofit retrofit = apiLoader.fetchApi();
 
          jsonHolderApi = retrofit.create(JsonHolderApi.class);
 //        loader.fetchUrl();
-        
+
         Call<Tenant> call = jsonHolderApi.getTenant(3304);
 
         call.enqueue(new Callback<Tenant>() {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LeaseActivity">
+    tools:context=".Activity.LeaseActivity">
 
     <TextView
         android:id="@+id/profiletxt"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="AMS 203 A"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/bedratetxt"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="PHP 4,400.00"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/startdate"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Jan 4, 2020"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/enddate"
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:textSize="20dp"
-        android:text="Jan 4, 2021"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/clubtxt"
@@ -137,7 +137,7 @@
         android:layout_alignParentRight="true"
         android:textSize="20dp"
         android:textColor="@color/green"
-        android:text="Suscribed"/>
+        android:text=""/>
 
 
     <Button

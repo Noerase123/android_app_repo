@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.ApiServer;
 
 import com.e.loginapp.Model.Invoice;
 import com.e.loginapp.Model.Issue;
@@ -29,14 +29,4 @@ public interface JsonHolderApi {
     @GET("GetTenant/{id}")
     Call<Tenant> getTenant(@Path("id") int tenantId);
 
-    @FormUrlEncoded
-    @POST("testingAddIssues")
-    Call<Issue> addIssues(
-            @Field("issueDetails") String details,
-            @Field("category") String category,
-            @Field("anytime") int anytime,
-            @Field("date1") String date1,
-            @Field("date2") String date2,
-            @Field("date3") String date3
-    );
 }

@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.e.loginapp.R;
 
 public class paymentActivity extends Activity {
 

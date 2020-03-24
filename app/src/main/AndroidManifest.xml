@@ -11,18 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".EventsActivity" />
-        <activity android:name=".ClubActivity" />
-        <activity android:name=".BookCleaningActivity" />
-        <activity android:name=".LeaseActivity" />
-        <activity android:name=".IssueActivity" />
-        <activity android:name=".BillListActivity" />
-        <activity android:name=".paymentActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".Activity.AccountActivity" />
+        <activity android:name=".Activity.EventsActivity" />
+        <activity android:name=".Activity.ClubActivity" />
+        <activity android:name=".Activity.BookCleaningActivity" />
+        <activity android:name=".Activity.LeaseActivity" />
+        <activity android:name=".Activity.IssueActivity" />
+        <activity android:name=".Activity.BillListActivity" />
+        <activity android:name=".Activity.paymentActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".CalculatorActivity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.Main2Activity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

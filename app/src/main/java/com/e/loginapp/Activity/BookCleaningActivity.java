@@ -1,4 +1,4 @@
-package com.e.loginapp;
+package com.e.loginapp.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,8 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.e.loginapp.R;
 
 import java.util.Calendar;
 

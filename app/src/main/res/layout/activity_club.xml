@@ -7,7 +7,7 @@
     android:background="@drawable/bgvio"
     android:requiresFadingEdge="vertical"
     android:fadingEdgeLength="50dp"
-    tools:context=".ClubActivity">
+    tools:context=".Activity.ClubActivity">
 
     <LinearLayout
         android:orientation="vertical"

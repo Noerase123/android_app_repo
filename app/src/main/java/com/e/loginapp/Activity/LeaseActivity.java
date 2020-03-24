@@ -8,12 +8,29 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import com.e.loginapp.ApiServer.JsonHolderApi;
+import com.e.loginapp.ApiServer.ApiLoader;
+import com.e.loginapp.Model.Tenant;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class LeaseActivity extends AppCompatActivity {
 
+    private ApiLoader apiLoader;
+    private JsonHolderApi jsonHolderApi;
     final Context context = this;
     private Button extendbtn;
+
+    private TextView unitno;
+    private TextView bedRate;
+    private TextView startDate;
+    private TextView endDate;
+    private TextView mytownClub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +38,14 @@ public class LeaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lease);
 
         extendbtn = (Button) findViewById(R.id.extendbtn);
+
+        unitno = (TextView) findViewById(R.id.unitres);
+        bedRate = (TextView) findViewById(R.id.bedrateres);
+        startDate = (TextView) findViewById(R.id.startdatetxtres);
+        endDate = (TextView) findViewById(R.id.enddatetxtres);
+        mytownClub = (TextView) findViewById(R.id.subscribe);
+
+        getLeasePlans();
 
         extendbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +81,35 @@ public class LeaseActivity extends AppCompatActivity {
 
                 // show it
                 alertDialog.show();
+
+            }
+        });
+    }
+
+    private void getLeasePlans() {
+        Retrofit retrofit = apiLoader.fetchApi();
+
+        jsonHolderApi = retrofit.create(JsonHolderApi.class);
+        Call<Tenant> call = jsonHolderApi.getTenant(3304);
+
+        call.enqueue(new Callback<Tenant>() {
+            @Override
+            public void onResponse(Call<Tenant> call, Response<Tenant> response) {
+                if (response.isSuccessful()) {
+                    unitno.setText(response.body().getBldg_num() + ' ' + response.body().getRoom_id() + ' ' + response.body().getBed_type());
+                    bedRate.setText("PHP " + response.body().getPrice());
+                    startDate.setText(response.body().getMoveIn());
+                    endDate.setText(response.body().getMoveOut());
+                    if (response.body().getClubMember().equals("1")) {
+                        mytownClub.setText("Subscribed");
+                    } else {
+                        mytownClub.setText("Unsubscribed");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Tenant> call, Throwable t) {
 
             }
         });

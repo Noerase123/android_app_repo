@@ -11,9 +11,19 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.e.loginapp.Model.Tenant;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
     RelativeLayout rellay1, rellay2;
+
+    private int email;
 
     EditText username;
     EditText password;
@@ -45,16 +55,16 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (username.getText().toString().equals("test123") && password.getText().toString().equals("test123")) {
+//               if (username.getText().toString().equals("test123") && password.getText().toString().equals("123456")) {
                     Intent i = new Intent(MainActivity.this,Main2Activity.class);
                     startActivity(i);
 
                     username.setText("");
                     password.setText("");
-//                }
-//                else {
-//                    Toast.makeText(MainActivity.this,"Login Failed",Toast.LENGTH_LONG).show();
-//                }
+//               }
+//               else {
+//                   Toast.makeText(MainActivity.this,"Login Failed",Toast.LENGTH_LONG).show();
+//               }
             }
         });
     }

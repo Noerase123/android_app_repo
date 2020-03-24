@@ -1,46 +1,34 @@
 package com.e.loginapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearSnapHelper;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
-
-import android.util.Log;
-import android.view.Gravity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.e.loginapp.Model.Post;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.Model.Tenant;
-import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
-import com.google.android.material.bottomappbar.BottomAppBar;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.e.loginapp.ApiServer.ApiLoader;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private String BASE_URL = "https://mytown-app.com/api/";
-
+    private ApiLoader apiLoader;
+    private JsonHolderApi jsonHolderApi;
     private RecyclerView mRecyclerView;
     private TextView balanceResult;
-    private JsonHolderApi jsonHolderApi;
     private TextView nametxt;
     private TextView unitnores;
 
@@ -158,27 +146,27 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void getOneTenant() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = apiLoader.fetchApi();
 
-        jsonHolderApi = retrofit.create(JsonHolderApi.class);
-        Call<Tenant> call = jsonHolderApi.getTenant();
+         jsonHolderApi = retrofit.create(JsonHolderApi.class);
+//        loader.fetchUrl();
+        
+        Call<Tenant> call = jsonHolderApi.getTenant(3304);
 
         call.enqueue(new Callback<Tenant>() {
             @Override
             public void onResponse(Call<Tenant> call, Response<Tenant> response) {
                 if (response.isSuccessful()) {
                     nametxt.setText(response.body().getFirstname() + ' ' + response.body().getMiddlename().substring(0,1) + ' ' + response.body().getLastname());
-                    unitnores.setText(response.body().getBldgNum().toUpperCase() + response.body().getRoomID());
+                    unitnores.setText(response.body().getBldg_num().toUpperCase() + response.body().getRoom_id());
 //                    Log.d("WORKING...", "FirstName : " + response.body().getFirstname());
                 }
             }
 
             @Override
             public void onFailure(Call<Tenant> call, Throwable t) {
-//                nametxt.setText(t.getMessage());
+                nametxt.setText(t.getMessage());
+                unitnores.setText(t.getMessage());
             }
         });
     }

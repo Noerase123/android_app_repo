@@ -3,12 +3,13 @@ package com.e.loginapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.e.loginapp.ApiServer.JsonHolderApi;
+import com.e.loginapp.ApiServer.ApiLoader;
 import com.e.loginapp.Model.Invoice;
 
 import java.util.List;
@@ -23,8 +24,12 @@ public class BillListActivity extends AppCompatActivity {
 
     LinearLayout billingmet;
     LinearLayout billingmet2;
-    private String BASE_URL = "https://mytown-app.com/api/";
+    private ApiLoader apiLoader;
     private JsonHolderApi jsonHolderApi;
+
+    private TextView invoiceRef;
+    private TextView invoiceAmount;
+    private TextView invoiceBillingDate;
 
     private TextView invoiceRes;
     @Override
@@ -33,6 +38,10 @@ public class BillListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bill_list);
 
         invoiceRes = (TextView) findViewById(R.id.textbill4);
+
+        invoiceRef = (TextView) findViewById(R.id.invoice_ref);
+        invoiceAmount = (TextView) findViewById(R.id.invoice_balance);
+        invoiceBillingDate = (TextView) findViewById(R.id.invoice_billing_date);
 
         invoiceCollection();
 
@@ -57,10 +66,7 @@ public class BillListActivity extends AppCompatActivity {
 
     private void invoiceCollection() {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit retrofit = apiLoader.fetchApi();
 
         jsonHolderApi = retrofit.create(JsonHolderApi.class);
 
@@ -70,23 +76,33 @@ public class BillListActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Invoice>> call, Response<List<Invoice>> response) {
 
-                if (!response.isSuccessful()) {
-                    invoiceRes.setText("Code: " + response.code());
-                    return;
+//                if (!response.isSuccessful()) {
+//                    invoiceRes.setText("Code: " + response.code());
+//                    return;
+//                }
+
+                if (response.isSuccessful()) {
+                    List<Invoice> invoices = response.body();
+
+                    for (Invoice invoice : invoices) {
+                        invoiceRef.setText(invoice.getInvoice_ref());
+                        invoiceAmount.setText(invoice.getInvoice_total());
+                        invoiceBillingDate.setText(invoice.getBilling_date());
+                    }
                 }
 
-                List<Invoice> invoices = response.body();
-
-                for (Invoice invoice : invoices) {
-                    String content = "";
-                    content += "ID : " + invoice.getInvoice_id() + "\n";
-                    content += "Invoice Reference : " + invoice.getInvoice_ref() + "\n";
-                    content += "Invoice Remaining : " + invoice.getInvoice_remaining() + "\n\n";
-
-                    invoiceRes.append(content);
-                    Log.d("BillListActivity", "" + content);
-
-                }
+//                List<Invoice> invoices = response.body();
+//
+//                for (Invoice invoice : invoices) {
+//                    String content = "";
+//                    content += "ID : " + invoice.getInvoice_id() + "\n";
+//                    content += "Invoice Reference : " + invoice.getInvoice_ref() + "\n";
+//                    content += "Invoice Remaining : " + invoice.getInvoice_remaining() + "\n\n";
+//
+//                    invoiceRes.append(content);
+//                    Log.d("BillListActivity", "" + content);
+//
+//                }
             }
 
             @Override

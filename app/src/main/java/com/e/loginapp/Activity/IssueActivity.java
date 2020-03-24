@@ -14,18 +14,29 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.e.loginapp.ApiServer.JsonHolderApi;
+import com.e.loginapp.Model.Issue;
 
 import java.util.Calendar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class IssueActivity extends AppCompatActivity {
 
     private static final String TAG = "IssueActivity";
+    private String BASE_URL = "https://mytown-app.com/api/";
+    private JsonHolderApi jsonHolderApi;
+
+    private EditText issueDetails;
+    private Spinner dropdown;
 
     private ImageView cameraBtn;
     private ImageView cameraView;
@@ -42,6 +53,7 @@ public class IssueActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue);
 
+        issueDetails = (EditText) findViewById(R.id.edit_text);
         FromDate = (TextView) findViewById(R.id.from_date);
         ToDate = (TextView) findViewById(R.id.to_date);
         FromToDate = (TextView) findViewById(R.id.fromto_date);
@@ -149,17 +161,18 @@ public class IssueActivity extends AppCompatActivity {
             }
         };
 
-        submitbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(IssueActivity.this, "Issue Submitted", Toast.LENGTH_LONG).show();
-            }
-        });
-
-        Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
+        dropdown = (Spinner) findViewById(R.id.spinner1);
         String[] items = new String[]{"Select Category", "Billing", "Personnel", "Repair", "Internet", "Housekeeping", "App Concerns"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+
+        submitbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                addIssue();
+            }
+        });
     }
 
 
@@ -167,5 +180,23 @@ public class IssueActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         Bitmap bitmap = (Bitmap) data.getExtras().get("data");
         cameraView.setImageBitmap(bitmap);
+    }
+
+    private void addIssue() {
+
+        Call<Issue> call = jsonHolderApi.addIssues(issueDetails.getText().toString(), "App Concern", 0, FromDate.getText().toString(), ToDate.getText().toString(), FromToDate.getText().toString());
+
+        call.enqueue(new Callback<Issue>() {
+            @Override
+            public void onResponse(Call<Issue> call, Response<Issue> response) {
+
+                Toast.makeText(IssueActivity.this, "Issue Submitted", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Issue> call, Throwable t) {
+                Toast.makeText(IssueActivity.this, "Issue Failed", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

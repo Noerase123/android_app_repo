@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.e.loginapp.ApiServer.JsonHolderApi;
+import com.e.loginapp.ApiServer.KeyPoints;
 import com.e.loginapp.Model.Issue;
 import com.e.loginapp.R;
 
@@ -249,7 +250,7 @@ public class IssueActivity extends AppCompatActivity {
                 .build();
 
         Request request = new Request.Builder()
-                .url("https://mytown-app.com/api/testingAddIssues")
+                .url(KeyPoints.ISSUE_URL)
                 .post(requestBody)
                 .build();
 

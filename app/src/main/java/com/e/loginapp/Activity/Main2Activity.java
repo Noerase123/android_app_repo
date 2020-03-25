@@ -3,12 +3,14 @@ package com.e.loginapp.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.e.loginapp.ApiServer.JsonHolderApi;
 import com.e.loginapp.Model.Tenant;
 import com.e.loginapp.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
@@ -158,30 +161,6 @@ public class Main2Activity extends AppCompatActivity {
     }
 
     private void getOneTenant() {
-
-//        OkHttpClient client = new OkHttpClient();
-//
-//        Request request = new Request.Builder()
-//                .url("https://mytown-app.com/api/GetTenant/3304")
-//                .build();
-//
-//        Response response = null;
-//        try {
-//            response = client.newCall(request).execute();
-//
-//            if (response.isSuccessful()) {
-//                String mMessage = response.body().string();
-//                Gson gson = new Gson();
-//
-//                Tenant tenant = gson.fromJson(mMessage, Tenant.class);
-//                nametxt.setText(tenant.getFirstname() + ' ' + tenant.getMiddlename().substring(0,1) + ' ' + tenant.getLastname());
-//                unitnores.setText(tenant.getBldg_num().toUpperCase() + tenant.getRoom_id());
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
 
         Retrofit retrofit = apiLoader.fetchApi();
 
